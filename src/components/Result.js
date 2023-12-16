@@ -1,8 +1,13 @@
 // src/components/Result.js
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-const Result = ({ score }) => {
+const Result = ({ score, onReset }) => {
+  useEffect(() => {
+    onReset();
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="bg-white w-96 shadow-md rounded px-8 pt-6 pb-8 mb-4">

@@ -97,6 +97,11 @@ const Quiz = () => {
     return false;
   };
 
+  const reset = () => {
+    setCurrentPackage((_) => 0);
+    setShowResult((_) => false);
+  };
+
   return (
     <Router>
       <Routes>
@@ -116,7 +121,7 @@ const Quiz = () => {
             />
           }
         />
-        <Route path="/result" element={<Result />} />
+        <Route path="/result" element={<Result onReset={reset} />} />
       </Routes>
     </Router>
   );
