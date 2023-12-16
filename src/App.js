@@ -1,14 +1,19 @@
-import './App.css';
-import Quiz from './components/Quiz';
-import { Helmet } from 'react-helmet';
+import "./App.css";
+import AppNavigationBar from "./components/AppNavigationBar";
+import Quiz from "./components/Quiz";
+import { Helmet } from "react-helmet";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <Helmet>
-        <title>Quiz App</title>
-      </Helmet>
-      <Quiz />
+      <Router>
+        <Helmet>
+          <title>Quiz App</title>
+        </Helmet>
+        <AppNavigationBar />
+        <Quiz />
+      </Router>
     </div>
   );
 }

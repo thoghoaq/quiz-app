@@ -1,6 +1,6 @@
 // src/components/Quiz.js
 import React, { useState } from "react";
-import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Result from "./Result";
 import Package from "./Package";
 
@@ -103,27 +103,25 @@ const Quiz = () => {
   };
 
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Package
-              currentPackageNumber={currentPackage + 1}
-              questions={
-                currentPackage > quiz.length - 1
-                  ? []
-                  : quiz[currentPackage].questions
-              }
-              onAnswer={handleAnswer}
-              onNext={handleNextPackage}
-              showResult={showResult}
-            />
-          }
-        />
-        <Route path="/result" element={<Result onReset={reset} />} />
-      </Routes>
-    </Router>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <Package
+            currentPackageNumber={currentPackage + 1}
+            questions={
+              currentPackage > quiz.length - 1
+                ? []
+                : quiz[currentPackage].questions
+            }
+            onAnswer={handleAnswer}
+            onNext={handleNextPackage}
+            showResult={showResult}
+          />
+        }
+      />
+      <Route path="/result" element={<Result onReset={reset} />} />
+    </Routes>
   );
 };
 

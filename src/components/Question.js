@@ -41,7 +41,7 @@ const Question = ({ questions, questionNumber, onNext, onAnswer, showResult }) =
   };
 
   return (
-    <div className="lg:w-1/2 sm:w-11/12 mx-auto p-8 bg-white rounded shadow">
+    <div className="lg:w-1/2 w-11/12 mx-auto p-8 bg-white rounded shadow">
       <h2 className="text-2xl font-bold mb-4 text-left">
         Câu {questionNumber}
       </h2>
