@@ -75,7 +75,7 @@ const Question = ({ questions, questionNumber, onNext, onAnswer, showResult }) =
                 : ""
             }
             ${
-              option == question.correctAnswer && submitted
+              option === question.correctAnswer && submitted
                 ? "bg-green-500"
                 : ""
             } ${!submitted && "hover:border-slate-800"} `}
